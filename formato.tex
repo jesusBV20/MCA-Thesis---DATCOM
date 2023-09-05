@@ -1,0 +1,140 @@
+
+\usepackage[spanish]{babel} %Español 
+\usepackage[utf8]{inputenc} %Para poder poner tildes
+\usepackage{vmargin} %Para modificar los márgenes
+\setmargins{2.5cm}{1.5cm}{16.5cm}{23.42cm}{10pt}{1cm}{0pt}{2cm}
+% Margen izquierdo, superior, anchura del texto, altura del texto, altura de los encabezados, espacio entre el texto y los encabezados, altura del pie de página, espacio entre el texto y el pie de página.
+
+\setlength{\parindent}{0cm} %Por defecto es 15pt.
+% Para añadir indentación manualmente: \hangindent=0.7cm 
+
+% Figuras, imágenes y sus captions
+\usepackage{graphicx} 
+\usepackage[font=small,labelfont=bf]{caption}
+
+% Otros paquetes
+\usepackage{moreverb,url}
+\usepackage[colorlinks,bookmarksopen,bookmarksnumbered,citecolor=red,urlcolor=red]{hyperref}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{floatpag} %Página del abstract no numerada
+\usepackage{dsfont}
+\usepackage{latexsym}
+\usepackage{hyperref} %\autoref{}
+\usepackage{wrapfig}  %Texto y figura "side by side"
+\usepackage{tikz}
+\usetikzlibrary{calc, arrows.meta}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\let\proof\relax 
+\let\endproof\relax
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\newcommand\normx[1]{\left\Vert#1\right\Vert}
+
+\newtheoremstyle{theoremdd}% name of the style to be used
+  {\topsep}% measure of space to leave above the theorem. E.g.: 3pt
+  {\topsep}% measure of space to leave below the theorem. E.g.: 3pt
+  {\itshape}% name of font to use in the body of the theorem
+  {0pt}% measure of space to indent
+  {\bfseries}% name of head font
+  {. ---}% punctuation between head and body
+  { }% space after theorem head; " " = normal interword space
+  {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}}
+
+% Estilo de los teoremos
+\theoremstyle{theoremdd}
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{thm}[theorem]{Teorema}
+
+\newtheorem{problema}{Problema}[section]
+\newtheorem{coroll}{Colorario}[section]
+\newtheorem{lemma}{Lema}[section]
+
+\newtheorem{prop}{Proposici\'on}[section]
+\newtheorem{definition}{Definici\'on}[section]
+
+%\theoremstyle{definition}
+%\newtheorem{conj}[theorem]{Conjetura}
+%\newtheorem{example}[theorem]{Ejemplo}
+
+\theoremstyle{remark}
+\newtheorem{rem}{Observación\'on}[section]
+\newtheorem{suposicion}{Suposición}[section]
+\newtheorem{rems}[rem]{Observación\'on}
+
+% Otras configuraciones %%%%%%%%%%%%%
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=blue,
+    pdfpagemode=FullScreen,
+}
+\urlstyle{same}
+
+%Tikz
+\usetikzlibrary{patterns}
+
+% Formato de numeración de las ecuaciones
+\numberwithin{equation}{section}
+
+% Macros
+\renewcommand{\baselinestretch}{1} % Interlineado
+\setlength{\parskip}{1.6 ex}
+
+% Itemsize custom labels
+\renewcommand{\labelenumi}{{\theenumi})}
+
+% Math notation
+\newcommand{\rank}{{\rm rank}\,}
+\newcommand{\defeq}{:=} %{\stackrel{\Delta}{=}}
+\newcommand{\red}[1]{{\leavevmode\color{red}#1}}
+\newcommand{\blue}[1]{{\leavevmode\color{blue}#1}}
+\newcommand{\green}[1]{{\leavevmode\color{green}#1}}
+\newcommand{\cyan}[1]{{\leavevmode\color{cyan}#1}}
+
+\newcommand{\dist}{{\rm dist}}
+\newcommand{\dt}{\frac{{\rm d}}{{\rm d}t}}
+\newcommand{\expo}[1]{{\rm exp} \left(#1\right)}					% exponential function
+\newcommand{\lambdamin}[1]{\lambda_{{\rm min}}\left(#1\right)}		% minimum eigenvalue
+\newcommand{\lambdamax}[1]{\lambda_{{\rm max}}\left(#1\right)}		% maximum eigenvalue
+\newcommand{\lambdainf}[1]{\lambda_{{\rm inf}}\left(#1\right)}		% infimum eigenvalue
+\newcommand{\lambdasup}[1]{\lambda_{{\rm sup}}\left(#1\right)}		% supremum eigenvalue
+\newcommand{\matr}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\newcommand{\vmatr}[1]{\begin{vmatrix} #1 \end{vmatrix}}
+\newcommand{\sig}{{\rm sig}}	% sig function
+\newcommand{\sgn}{{\rm sgn}}	% signum function
+\newcommand\undermat[2]{%
+	\makebox[0pt][l]{$\smash{\underbrace{\phantom{%
+					\begin{matrix}#2\end{matrix}}}_{\text{$#1$}}}$}#2} % underbrace in matrix
+\newcommand{\transpose}[1]{#1^\top}
+\newcommand{\inv}[1]{#1^{-1}}	% matrix inverse
+\newcommand{\diag}[1]{{\rm diag}\{ #1\}}
+\newcommand{\derivative}[2]{\frac{{\rm d} #1}{{\rm d} #2}}
+%\newcommand{\dgamma}[1]{\frac{{\rm d} #1}{{\rm d}\gamma}}
+\newcommand{\cmmnt}[1]{}
+\newcommand{\chiup}{\raisebox{2pt}{$\chi$}}
+\newcommand{\vf}{\chiup}
+\newcommand{\identity}{{\rm id}}
+\newcommand{\set}[1]{\mathcal{#1}}
+
+\newcommand{\normm}[1]{\big\lVert#1\big\rVert}		% for cases if \norm is not satisfactory
+\newcommand{\mbr}[1][{}]{\mathbb{R}^{#1}}	% \mbr[n]
+
+\newcommand{\proj}[1]{{#1}^{\mathrm{prj}}}
+\newcommand{\trs}[1]{{#1}^{\mathrm{trs}}}
+\newcommand{\hgh}[1]{{#1}^{\mathrm{hgh}}}
+\newcommand{\phy}[1]{{#1}^{\mathrm{phy}}}
+
+\newcommand{\vfpf}{\prescript{\rm pf}{}{\vf}}
+\newcommand{\vfco}{\prescript{\rm co}{}{\vf}}
+\newcommand{\vfcb}{\mathfrak{X}}%{\prescript{\rm a}{}{\vf}}
+\newcommand{\normv}[1]{\overline{#1}}			% normalization of a vector

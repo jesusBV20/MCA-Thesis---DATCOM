@@ -1,0 +1,56 @@
+\section{Algoritmo resiliente para localizar la fuente de un campo escalar}
+{\color{red} bla, bla, bla (intro Rey León)}
+
+\subsection{Notación y formalización del problema de \textit{source seeking}}
+
+\begin{definition}
+El vector apilado $x := \begin{bmatrix}x_1^T, \dots, x_N^T\end{bmatrix}^T \in \mathbb{R}^{mN}$ denotará la \textit{geometría} o \textit{formación} del enjambre. Dicha geometría será \textit{no degenerada} si los vectores $\{x_1^T, \dots, x_N^T\}$ generan el espacio $\mathbb{R}^m$.
+\end{definition}
+
+\begin{definition}
+Una \textit{señal} es un campo escalar  $\sigma: \mathbb{R}^m \to \mathbb{R}^+$, dos veces diferenciable y con todas sus derivadas hasta segundo orden acotadas globalmente. En nuestro caso, dicho $\sigma$ cuenta únicamente con un máximo en $p_\sigma$ y su gradiente en $a\in\mathbb{R}^m$ satisface que  $\nabla\sigma(a) \neq 0 \iff a \neq p_\sigma$ y $\lim_{||a||\to\infty}\sigma(a) \to 0$.
+\end{definition}
+
+{\color{red} Hablar del por qué de esta definición de señal (Héctor comenta cosas muy chulas en el artículo)}
+
+{\color{red} Introducir algunas propiedades que utilizaremos más adelante}
+
+\subsection{Herramientas de \textit{source seeking}}
+
+\subsubsection{La dirección de ascenso}
+
+\cite{brinon2015distributed}
+{\color{red} Resumir trabajo de Lara, enfrentar nuestros resultados y justificar que nosotros EXTENDEMOS lo suyo a cualquier formación}
+
+En esta sección demostraremos que, bajo ciertas condiciones, el vector siguiente vector es una dirección de ascenso en $p_c$:
+
+\begin{align}\label{eq: l_sigma}
+    L_\sigma(p_c,x) &= \frac{1}{ND^2}\sum_{i=1}^N \sigma(p_i)(p_i - p_c) \nonumber \\
+&= \frac{1}{ND^2}\sum_{i=1}^N \sigma(p_c + x_i)x_i,
+\end{align}
+
+donde $D = \operatorname{max}_{1\leq i\leq N}{||x_i||}$.
+
+{\color{red} introducir L1}
+
+\begin{equation} \label{eq: l1}
+    L_\sigma^1 = \frac{1}{N D^2}\sum^{N}_{i=1} \left[ \nabla\sigma(p_c)^T x_i\right] x_i
+\end{equation}
+
+\begin{lemma}
+\label{le: l1}
+Si la formación $x$ es no degenerada y $p_c \ne p_\sigma$ entonces $L^1_\sigma(p_c,x)$ es \emph{siempre} una dirección de ascenso en $p_c$ hacía el máximo $p_\sigma$ del campo escalar $\sigma$.
+\end{lemma}
+
+\begin{proof}
+Para que $L^1_\sigma(p_c,x)$ sea siempre una dirección de ascenso, es condición necesaria y suficiente que $\nabla\sigma(p_c)^TL^1_\sigma(p_c, x) > 0$. Este caso es muy simple porque
+
+\begin{equation}
+\nabla\sigma(p_c)^TL^1_\sigma(p_c, x) = \frac{1}{ND^2}\sum_{i=1}^N ||\nabla\sigma(p_c)^Tx_i||^2 \nonumber
+\end{equation}
+
+es estrictamente mayor que cero, siempre y cuando la formación $x$ no se encuentre degenerada.
+
+\end{proof}
+
+{\color{red} bla bla}

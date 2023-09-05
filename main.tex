@@ -1,0 +1,43 @@
+%-----------------------------------------------------
+% FORMATO Y PAQUETES
+%-----------------------------------------------------
+
+\documentclass[12pt, a4paper, onecolumn]{ieeeconfarq}
+\usepackage{import} %Estructurar en varios .tex
+
+\import{./}{formato.tex}
+
+% -------------------------------
+
+\begin{document}
+
+% Portada -
+\import{./capitulos/}{portada.tex}
+
+% Índice -
+\newpage
+\pagenumbering{arabic}
+\small
+\tableofcontents
+\newpage
+
+% Cuerpo -
+\normalsize
+
+\import{./capitulos/}{intro.tex}
+\newpage
+
+\import{./capitulos/}{_cap1.tex}
+\newpage
+
+\import{./capitulos/}{_cap2.tex}
+\newpage
+
+\import{./capitulos/}{conclusiones.tex}
+
+% Referencias/Bibliografía -
+\bibliographystyle{IEEEtran}
+\bibliography{biblio}
+
+\end{document}
+% -------------------------------
